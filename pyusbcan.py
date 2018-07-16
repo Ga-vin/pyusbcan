@@ -214,7 +214,7 @@ SEND_TYPE_LIST          = [SEND_NORMAL, SEND_SINGLE,\
 ## =============================================================================
 CHAR                    = ctypes.c_char
 UCHAR                   = ctypes.c_ubyte
-BYTE                    = ctypes.c_byte
+BYTE                    = ctypes.c_ubyte
 
 USHORT                  = ctypes.c_uint16
 
@@ -499,6 +499,7 @@ class PyUsbCan(object):
         else:
             self.__connected = True
             self.__open_flag = True
+            return True
 
     def close_device(self, device_index):
         '''
